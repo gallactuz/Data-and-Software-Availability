@@ -1,0 +1,11 @@
+source leaprc.protein.ff14SB
+
+
+M=loadpdb "antibody.pdb"
+
+edit M
+
+saveamberparm M antibody.prmtop antibody.inpcrd
+
+quit
+

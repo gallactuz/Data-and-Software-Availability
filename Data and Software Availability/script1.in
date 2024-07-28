@@ -1,0 +1,33 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff
+
+
+p = loadpdb "complex.pdb"
+
+
+bond p.336.SG p.361.SG
+bond p.379.SG p.432.SG
+bond p.480.SG p.488.SG
+
+
+
+edit p
+
+
+
+saveamberparm p cpxv.prmtop cpxv.inpcrd
+
+source leaprc.water.tip3p
+
+
+
+solvatebox p TIP3PBOX 20.0 
+
+addIons p Na+  0
+
+addIons p Cl-  0
+
+saveamberparm p cpxa.prmtop cpxa.inpcrd
+
+
+quit

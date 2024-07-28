@@ -1,0 +1,20 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff
+
+
+M=loadpdb "antigen.pdb"
+
+
+bond M.336.SG M.361.SG
+bond M.379.SG M.432.SG
+bond M.480.SG M.488.SG
+
+
+
+
+
+edit M
+
+saveamberparm M antigen.prmtop antigen.inpcrd
+
+quit
